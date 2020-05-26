@@ -16,7 +16,9 @@
   "description": "## Simple vuejs components for scada-lts ## How to use: 1. Just use `npm install --save @min-gb/vuejs-components` 2. Use the components in your file directly.",
   "dependencies": {
     "core-js": "^3.6.4",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-moment": "^4.1.0",
+    "vue-timers": "^2.0.4"
   },
   "eslintConfig": {
     "root": true,
