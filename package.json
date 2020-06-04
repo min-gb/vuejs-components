@@ -1,6 +1,6 @@
 {
   "name": "@min-gb/vuejs-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "license": "MIT",
   "keywords": [
@@ -17,6 +17,7 @@
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
+    "vue-imask": "^6.0.5",
     "vue-moment": "^4.1.0",
     "vue-timers": "^2.0.4"
   },
