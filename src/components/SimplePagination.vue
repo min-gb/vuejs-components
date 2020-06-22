@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="min-gb-pagination">
-        <button
+        <button class="btn-pagination"
                 :disabled="isPreviousButtonDisabled"
                 @click="previousPage"
         >Pref
@@ -15,7 +15,7 @@
                 @loadPage="onLoadPage(index+1)"
         />
 
-        <button
+        <button class="btn-pagination"
                 :disabled="isNextButtonDisabled"
                 @click="nextPage">
             Next
@@ -87,8 +87,14 @@
 </script>
 
 <style scoped>
+    .btn-pagination {
+        padding: 0px 0px 0px 0px;
+        border: none;
+        padding: 3px 3px;
+    }
     .min-gb-pagination {
-        margin-top: 7px;
+        padding: 0px 0px 0px 0px;
+        margin-top: 8px;
     }
     .min-gb-current-page {
         font-weight: bold;

@@ -1,5 +1,5 @@
 <template>
-  <span class="base-pagination-trigger" @click="onClick">
+  <span @click="onClick">
     {{ pageNumber }}
   </span>
 </template>
