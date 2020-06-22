@@ -90,7 +90,6 @@
     .btn-pagination {
         padding: 0px 0px 0px 0px;
         border: none;
-        padding: 3px 3px;
     }
     .min-gb-pagination {
         padding: 0px 0px 0px 0px;
