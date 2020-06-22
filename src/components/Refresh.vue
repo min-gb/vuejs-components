@@ -1,15 +1,18 @@
 <template>
     <div v-bind:class='{
-                        "gb-min-alert-refresh": isAlert(),
-                        "gb-min-warning-refresh": isWarning(),
-                        "gb-min-ok-refresh": isOk()
+                        "min-gb-alert-refresh": isAlert(),
+                        "min-gb-warning-refresh": isWarning(),
+                        "min-gb-ok-refresh": isOk()
                     }'>
         <slot></slot>
-        Last Refresh: <span>{{lastDateRun | moment("yyyy-MM-dd h:mm:ss")}}</span>
+<!--        Last Refresh: <span>{{lastDateRun | moment("yyyy-MM-dd h:mm:ss")}}</span>-->
     </div>
 </template>
 
 <script>
+
+    import moment from 'vue-moment'
+
     export default {
         data() {
             return {
@@ -29,22 +32,27 @@
                 return (new Date() - this.lastDateRun >= 2000)
             }
 
+        },
+        filters: {
+            moment: function (date) {
+                return moment(date).format('yyyy-MM-dd h:mm:ss a');
+            }
         }
     }
 </script>
 
 <style scoped>
-    .gb-min-alert-refresh {
+    .min-gb-alert-refresh {
         background-color: red;
         color: white;
     }
 
-    .gb-min-warning-refresh {
+    .min-gb-warning-refresh {
         background-color: orange;
         color: #2c3e50;
     }
 
-    .gb-min-ok-refresh {
+    .min-gb-ok-refresh {
         background-color: white;
         color: grey;
     }
