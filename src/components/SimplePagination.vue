@@ -6,15 +6,15 @@
                 @click="previousPage"
         >Pref
         </button>
-
+        <span v-if="section > 1" v-on:click="section=section-1" class="btn-pagination" style="font-weight: bolder">...</span>
         <SimplePaginationTrigger
                 v-for="(item, index) in paginationTriggers"
-                :key="item"
-                v-bind:class='{"min-gb-current-page": (currentPage===(index+1))}'
-                :pageNumber="index+1"
-                @loadPage="onLoadPage(index+1)"
+                :key="item*((section-1)*pageCount)"
+                v-bind:class='{"min-gb-current-page": (currentPage===(index+1+((section-1)*pageCount)))}'
+                :pageNumber="index+1+((section-1)*pageCount)"
+                @loadPage="onLoadPage(index+1+((section-1)*pageCount))"
         />
-
+            <span v-on:click="section=section+1" class="btn-pagination" style="font-weight: bolder">...</span>
         <button class="btn-pagination"
                 :disabled="isNextButtonDisabled"
                 @click="nextPage">
@@ -51,6 +51,7 @@
         },
         data() {
             return {
+                section: 1
             }
         },
         computed: {
@@ -61,7 +62,7 @@
                 return this.currentPage === this.pageCount
             },
             paginationTriggers() {
-                return Array(this.pageCount -1)
+                return Array(this.pageCount)
             }
         },
         methods: {
@@ -88,15 +89,19 @@
 
 <style scoped>
     .btn-pagination {
-        padding: 0px 0px 0px 0px;
+        padding: 5px 5px 5px 5px;
         border: none;
     }
     .min-gb-pagination {
         padding: 0px 0px 0px 0px;
-        margin-top: 8px;
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        width: auto;
     }
     .min-gb-current-page {
         font-weight: bold;
+        color: darkred;
     }
 
 </style>
