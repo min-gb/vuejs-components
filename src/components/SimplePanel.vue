@@ -73,7 +73,7 @@
         position:relative;
         float: left;
         left:0em;
-        width: 4em;
+        width: 8em;
         font-family: inherit;
         font-size: 19px;
         color: #d4d4d4;
