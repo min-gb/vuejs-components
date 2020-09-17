@@ -1,6 +1,6 @@
 # vuejs-components
 ## More ...
-[vuejs-components] https://min-gb.github.io/vuejs-components
+[vuejs-components](https://min-gb.github.io/vuejs-components)
 ## Project setup
 ```
 npm install
